@@ -1,3 +1,6 @@
+function PlayerName (first: string, last: string) {
+	
+}
 let mySprite: Sprite = null
 let User = game.askForString("ready to start game? Yes(y) No(n)", 1)
 if (User == "y") {
