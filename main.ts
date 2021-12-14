@@ -1,10 +1,10 @@
-function PlayerName (first: string, last: string) {
-	
+function PlayersName (first: string) {
+    return first
 }
 let mySprite: Sprite = null
 let User = game.askForString("ready to start game? Yes(y) No(n)", 1)
 if (User == "y") {
-    User = game.askForString("what is the player's name?")
+    User = game.askForString(PlayersName("what is the player's name?"))
     scene.setBackgroundImage(img`
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -145,4 +145,5 @@ if (User == "y") {
         . . . . . f f f f f f . . . . . 
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Player)
+    game.splash(User, " your task is to defeat your opponent ")
 }
