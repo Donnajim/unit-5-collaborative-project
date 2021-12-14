@@ -1,18 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="20.mO9Y6;r|kej`/Kli6">mySprite</variable><variable type="KIND_SpriteKind" id="BsK]Y1t+Pv;R)I,lT.H{">Player</variable><variable type="KIND_SpriteKind" id="a~J|WIn~=.QUg9|:I]4e">Projectile</variable><variable type="KIND_SpriteKind" id="#8m3N|c0rC`]Aenio[oM">Food</variable><variable type="KIND_SpriteKind" id="l~ywis}~n5Qzq]lrQDo,">Enemy</variable><variable type="KIND_SpriteKind" id="_N`Wr4Bgk8MtVP7Wc!~2">StatusBar</variable></variables><block type="pxt-on-start" id="Ti8ZnLmX.|qjwZ6#Q|L#" x="170" y="230"><statement name="HANDLER"><block type="variables_set" id="^;dRh//qvJ!.E(e.2xHH"><field name="VAR" id="20.mO9Y6;r|kej`/Kli6">mySprite</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="bX`vRz[~_~1KE5bGUSa;"><value name="img"><shadow type="screen_image_picker" id="}XK?K%?0lKN~eFs~*`[k"><field name="img">img`
-. . . . . . f f f f . . . . . . 
-. . . . f f f 2 2 f f f . . . . 
-. . . f f f 2 2 2 2 f f f . . . 
-. . f f f e e e e e e f f f . . 
-. . f f e 2 2 2 2 2 2 e e f . . 
-. . f e 2 f f f f f f 2 e f . . 
-. . f f f f e e e e f f f f . . 
-. f f e f b f 4 4 f b f e f f . 
-. f e e 4 1 f d d f 1 4 e e f . 
-. . f e e d d d d d d e e f . . 
-. . . f e e 4 4 4 4 e e f . . . 
-. . e 4 f 2 2 2 2 2 2 f 4 e . . 
-. . 4 d f 2 2 2 2 2 2 f d 4 . . 
-. . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
-. . . . . f f f f f f . . . . . 
-. . . . . f f . . f f . . . . . 
-`</field><data>{"commentRefs":[],"fieldData":{"img":"}XK?K%?0lKN~eFs~*`[k"}}</data></shadow></value><value name="kind"><shadow type="spritekind" id="v]/I=uL_d1G+HX;7U0~i"><field name="MEMBER">Player</field></shadow></value></block></value></block></statement></block></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="20.mO9Y6;r|kej`/Kli6">mySprite</variable><variable type="KIND_SpriteKind" id="BsK]Y1t+Pv;R)I,lT.H{">Player</variable><variable type="KIND_SpriteKind" id="a~J|WIn~=.QUg9|:I]4e">Projectile</variable><variable type="KIND_SpriteKind" id="#8m3N|c0rC`]Aenio[oM">Food</variable><variable type="KIND_SpriteKind" id="l~ywis}~n5Qzq]lrQDo,">Enemy</variable><variable type="KIND_SpriteKind" id="_N`Wr4Bgk8MtVP7Wc!~2">StatusBar</variable></variables><block type="pxt-on-start" id="Ti8ZnLmX.|qjwZ6#Q|L#" x="70" y="50"><statement name="HANDLER"><block type="gamesetbackgroundcolor" id="plPO|K|D;u@8~7eh1_@L"><value name="color"><shadow type="colorindexpicker" id="fDD!A[x|n5%e?JUx$.aa"><field name="index">1</field></shadow></value></block></statement></block></xml>
