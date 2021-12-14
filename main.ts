@@ -146,4 +146,6 @@ if (User == "y") {
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Player)
     game.splash(User, " your task is to defeat your opponent ")
+} else {
+    game.splash("Come back to play another time")
 }
