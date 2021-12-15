@@ -1,6 +1,28 @@
 function PlayersName (first: string) {
     return first
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . 2 2 2 2 . . . 
+        . . . . . . . 2 2 1 1 1 1 2 . . 
+        . . . . 2 2 3 3 1 1 1 1 1 1 . . 
+        . . 3 3 3 3 1 1 1 1 1 1 1 1 . . 
+        . . 1 1 1 1 1 1 1 1 1 1 1 1 . . 
+        . . 3 3 2 2 3 1 1 1 1 1 1 1 . . 
+        . . . . . . 2 2 3 1 1 1 1 2 . . 
+        . . . . . . . . . 2 2 2 2 . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mySprite, 50, 50)
+})
+let opponent: Sprite = null
+let projectile: Sprite = null
 let statusbar: StatusBarSprite = null
 let mySprite: Sprite = null
 let User = game.askForString("ready to start game? Yes(y) No(n)", 1)
@@ -146,8 +168,31 @@ if (User == "y") {
         . . . . . f f f f f f . . . . . 
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Player)
+    controller.moveSprite(mySprite, 200, 200)
     game.splash(User, " your task is to defeat your opponent ")
     statusbar = statusbars.create(20, 4, StatusBarKind.Health)
 } else {
     game.splash("Come back to play another time")
 }
+game.onUpdateInterval(500, function () {
+    opponent = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . c c c c . . . . . . . . 
+        . . c c 5 5 5 5 c c . . . . . . 
+        . c 5 5 5 5 5 5 5 5 c . . . . . 
+        c 5 5 5 5 5 1 f 5 5 5 c . . . . 
+        c 5 5 5 5 5 f f 5 5 5 5 c . . . 
+        c 5 5 5 5 5 5 5 5 5 5 5 c . . . 
+        c c b b 1 b 5 5 5 5 5 5 d c . . 
+        c 5 3 3 3 5 5 5 5 5 d d d c . . 
+        . b 5 5 5 5 5 5 5 5 d d d c . . 
+        . . c b b c 5 5 b d d d d c c . 
+        . c b b c 5 5 b b d d d d c d c 
+        . c c c c c c d d d d d d d d c 
+        . . . c c c c d 5 5 b d d d c . 
+        . . c c c c c b 5 5 b c c c . . 
+        . . c b b b c d 5 5 b c . . . . 
+        `, SpriteKind.Enemy)
+    opponent.setVelocity(-100, 0)
+    opponent.setPosition(160, randint(0, 120))
+})
