@@ -1,6 +1,7 @@
 function PlayersName (first: string) {
     return first
 }
+let statusbar: StatusBarSprite = null
 let mySprite: Sprite = null
 let User = game.askForString("ready to start game? Yes(y) No(n)", 1)
 if (User == "y") {
@@ -146,6 +147,7 @@ if (User == "y") {
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Player)
     game.splash(User, " your task is to defeat your opponent ")
+    statusbar = statusbars.create(20, 4, StatusBarKind.Health)
 } else {
     game.splash("Come back to play another time")
 }
