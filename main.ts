@@ -1,6 +1,9 @@
 function PlayersName (first: string) {
     return first
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+	
+})
 let statusbar: StatusBarSprite = null
 let mySprite: Sprite = null
 let User = game.askForString("ready to start game? Yes(y) No(n)", 1)
