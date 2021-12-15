@@ -23,12 +23,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     mySprite.destroy(effects.blizzard, 500)
-    statusbar.value += -1
 })
 let opponent: Sprite = null
 let statusbar2: StatusBarSprite = null
 let projectile: Sprite = null
-let statusbar: StatusBarSprite = null
 let mySprite: Sprite = null
 let User = game.askForString("ready to start game? Yes(y) No(n)", 1)
 if (User == "y") {
@@ -174,11 +172,11 @@ if (User == "y") {
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Player)
     game.splash(User, " your task is to defeat your opponent ")
-    statusbar = statusbars.create(20, 2, StatusBarKind.Health)
     controller.moveSprite(mySprite, 200, 200)
     mySprite.setStayInScreen(true)
 } else {
     game.splash("Come back to play another time")
+    User = game.askForString("ready to start game now? Yes(y) No(n)", 1)
 }
 game.onUpdateInterval(500, function () {
     statusbar2 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
