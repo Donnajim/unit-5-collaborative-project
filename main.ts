@@ -237,7 +237,7 @@ if (User == "y") {
         ddddddddddddddddddddddbbbdddddddddddddddddddddddddddddddddddddd
         ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         `, SpriteKind.Player)
-    mySprite.sayText("Come back to play another time")
+    mySprite2.sayText("Come back to play another time")
 }
 game.onUpdateInterval(500, function () {
     opponent = sprites.create(img`
