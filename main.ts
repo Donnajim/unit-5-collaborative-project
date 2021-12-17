@@ -24,11 +24,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     otherSprite.destroy(effects.blizzard, 500)
-    info.changeLifeBy(1)
+    info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy(effects.spray, 500)
-    info.changeLifeBy(-1)
+    info.changeScoreBy(-1)
 })
 let opponent: Sprite = null
 let projectile: Sprite = null
@@ -59,6 +59,7 @@ if (!(User == "n")) {
     game.splash(User, " your task is to defeat your opponent ")
     controller.moveSprite(mySprite, 200, 200)
     mySprite.setStayInScreen(true)
+    info.setScore(0)
     info.setLife(3)
 } else {
     mySprite2 = sprites.create(img`
