@@ -19,18 +19,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . 1 3 . 3 3 . . . . . 
         . . . . . . . 1 1 3 . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, mySprite, 50, 50)
-})
-statusbars.onZero(StatusBarKind.Health, function (status) {
-    game.over(false)
+        `, mySprite, 61, 56)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     mySprite.destroy(effects.blizzard, 500)
+    info.changeLifeBy(-1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     opponent.destroy(effects.spray, 500)
+    info.changeLifeBy(1)
 })
-let statusbar2: StatusBarSprite = null
 let opponent: Sprite = null
 let projectile: Sprite = null
 let mySprite2: Sprite = null
@@ -180,7 +178,7 @@ if (User == "y") {
         `, SpriteKind.Player)
     game.splash(User, " your task is to defeat your opponent ")
     controller.moveSprite(mySprite, 200, 200)
-    mySprite.setStayInScreen(true)
+    info.setLife(3)
 } else {
     mySprite2 = sprites.create(img`
         ...........................cccccccccc..........................
@@ -242,7 +240,6 @@ if (User == "y") {
     mySprite.sayText("Come back to play another time")
 }
 game.onUpdateInterval(500, function () {
-    statusbar2 = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
     opponent = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . c c c c . . . . . . . . 
