@@ -34,7 +34,7 @@ let projectile: Sprite = null
 let mySprite2: Sprite = null
 let mySprite: Sprite = null
 let User = game.askForString("ready to start game? Yes(y) No(n)", 1)
-if (User == "y") {
+if (!(User == "n")) {
     User = game.askForString(PlayersName("what is the player's name?"))
     tiles.loadMap(tiles.createMap(tilemap`level1`))
     mySprite = sprites.create(img`
