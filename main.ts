@@ -21,14 +21,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . 
         `, mySprite, 200, 0)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    sprite.destroy(effects.spray, 500)
+    info.changeScoreBy(-1)
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     otherSprite.destroy(effects.blizzard, 500)
     info.changeScoreBy(1)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprite.destroy(effects.spray, 500)
-    info.changeScoreBy(-1)
 })
 let opponent: Sprite = null
 let projectile: Sprite = null
