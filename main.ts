@@ -57,6 +57,7 @@ if (User == "y") {
         `, SpriteKind.Player)
     game.splash(User, " your task is to defeat your opponent ")
     controller.moveSprite(mySprite, 200, 200)
+    mySprite.setStayInScreen(true)
     info.setLife(3)
 } else {
     mySprite2 = sprites.create(img`
