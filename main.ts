@@ -22,11 +22,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         `, mySprite, 200, 0)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    mySprite.destroy(effects.blizzard, 500)
+    otherSprite.destroy(effects.blizzard, 500)
     info.changeLifeBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    opponent.destroy(effects.spray, 500)
+    sprite.destroy(effects.spray, 500)
     info.changeLifeBy(-1)
 })
 let opponent: Sprite = null
